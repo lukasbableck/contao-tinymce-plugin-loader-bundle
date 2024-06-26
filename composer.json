@@ -1,0 +1,38 @@
+{
+	"name": "lukasbableck/contao-tinymce-plugin-loader-bundle",
+	"type": "contao-bundle",
+	"description": "This bundle allows you to add custom TinyMCE plugins to the TinyMCE editor in the Contao backend.",
+	"keywords": [
+		"plugin",
+		"rte",
+		"tinymce",
+		"contao"
+	],
+	"require": {
+		"contao/core-bundle": "^4.13 || ^5.0",
+		"markocupic/contao-tinymce-plugin-builder-bundle": "^1.2"
+	},
+	"license": "LGPL-3.0-or-later",
+	"autoload": {
+		"psr-4": {
+			"Lukasbableck\\ContaoTinymcePluginLoaderBundle\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Lukas Bableck",
+			"email": "lukas@bableck.dev",
+			"homepage": "https://bableck.dev"
+		}
+	],
+	"conflict": {
+		"contao/manager-plugin": "<2.0 || >=3.0"
+	},
+	"require-dev": {
+		"contao/manager-plugin": "^2.0",
+		"friendsofphp/php-cs-fixer": "^3.59"
+	},
+	"extra": {
+		"contao-manager-plugin": "Lukasbableck\\ContaoTinymcePluginLoaderBundle\\ContaoManager\\Plugin"
+	}
+}

@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+    Lukasbableck\ContaoTinymcePluginLoaderBundle\:
+        resource: ../src
+        exclude: ../src/{Resources}
+    Lukasbableck\ContaoTinymcePluginLoaderBundle\EventListener\:
+        resource: ../src/EventListener
+        public: true
