@@ -74,7 +74,7 @@ $GLOBALS['TL_DCA']['tl_tinymce_plugin'] = [
 			'exclude' => true,
 			'inputType' => 'fileTree',
 			'eval' => ['multiple' => false, 'fieldType' => 'radio', 'filesOnly' => true, 'extensions' => 'js', 'mandatory' => true, 'tl_class' => 'clr'],
-			'sql' => "binary(16) NULL",
+			'sql' => 'binary(16) NULL',
 		],
 	],
 ];

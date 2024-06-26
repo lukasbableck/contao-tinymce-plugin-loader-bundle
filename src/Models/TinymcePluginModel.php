@@ -1,4 +1,5 @@
 <?php
+
 namespace Lukasbableck\ContaoTinymcePluginLoaderBundle\Models;
 
 use Contao\Model;

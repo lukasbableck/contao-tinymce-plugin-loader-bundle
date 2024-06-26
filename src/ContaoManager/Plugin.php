@@ -10,6 +10,6 @@ use Lukasbableck\ContaoTinymcePluginLoaderBundle\ContaoTinymcePluginLoaderBundle
 
 class Plugin implements BundlePluginInterface {
 	public function getBundles(ParserInterface $parser): array {
-		return [BundleConfig::create(ContaoTinymcePluginLoaderBundle::class)->setLoadAfter([ContaoCoreBundle::class, ])];
+		return [BundleConfig::create(ContaoTinymcePluginLoaderBundle::class)->setLoadAfter([ContaoCoreBundle::class])];
 	}
 }
