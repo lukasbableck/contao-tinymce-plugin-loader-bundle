@@ -22,16 +22,23 @@ class GenerateSymlinksListener {
 		if (!$this->connection->createSchemaManager()->tablesExist([$table])) {
 			return;
 		}
+		$projectDir = System::getContainer()->getParameter('kernel.project_dir');
 		$linkPath = 'assets/tinymce4/js/plugins/';
+		$absoluteLinkPath = $projectDir . '/' . $linkPath;
 		$plugins = TinymcePluginModel::findAll();
 		foreach ($plugins as $plugin) {
 			$script = FilesModel::findByUuid($plugin->script)->path;
 			if ($script === null) {
 				continue;
 			}
-			$projectDir = System::getContainer()->getParameter('kernel.project_dir');
-			if (file_exists($projectDir.'/'.$linkPath.$plugin->name.'/'.$plugin->name.'.js')) {
-				continue;
+			if(!is_dir($absoluteLinkPath.$plugin->name)) {
+				mkdir($absoluteLinkPath.$plugin->name);
+			}
+			if (file_exists($absoluteLinkPath.$plugin->name.'/plugin.min.js')) {
+				if(!is_link($absoluteLinkPath.$plugin->name.'/plugin.min.js')) {
+					continue;
+				}
+				unlink('/'.$absoluteLinkPath.$plugin->name.'/plugin.min.js');
 			}
 			$event->addSymlink($script, $linkPath.$plugin->name.'/plugin.min.js');
 		}
