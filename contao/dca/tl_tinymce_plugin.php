@@ -36,10 +36,6 @@ $GLOBALS['TL_DCA']['tl_tinymce_plugin'] = [
 				'href' => 'act=edit',
 				'icon' => 'edit.svg',
 			],
-			'children' => [
-				'href' => 'table=tl_pim_category_text_languages',
-				'icon' => 'children.svg',
-			],
 			'copy' => [
 				'href' => 'act=copy',
 				'icon' => 'copy.gif',

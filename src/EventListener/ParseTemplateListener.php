@@ -18,7 +18,7 @@ class ParseTemplateListener {
 			return $buffer;
 		}
 
-		if(!array_key_exists('plugins', $GLOBALS['TINYMCE']['SETTINGS'])) {
+		if(!isset($GLOBALS['TINYMCE']['SETTINGS']['plugins'])) {
 			$GLOBALS['TINYMCE']['SETTINGS']['plugins'] = [];
 		}
 

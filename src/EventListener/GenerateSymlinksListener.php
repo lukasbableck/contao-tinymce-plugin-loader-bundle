@@ -33,7 +33,7 @@ class GenerateSymlinksListener {
 			if (file_exists($projectDir.'/'.$linkPath.$plugin->name.'/'.$plugin->name.'.js')) {
 				continue;
 			}
-			$event->addSymlink($script, $linkPath.$plugin->name.'/'.$plugin->name.'.js');
+			$event->addSymlink($script, $linkPath.$plugin->name.'/plugin.min.js');
 		}
 	}
 }
